@@ -8,6 +8,7 @@ import { publicRoutes } from '../../Routes/index'
 import { withContext } from '../../hooks/index'
 import NavbarEducation from './components/NavbarEducation'
 import NavbarUser from './components/NavbarUser'
+import NavbarAdmin from './components/NavbarAdmin'
 
 function NavBar(props) {
   // console.log(props)
@@ -51,6 +52,7 @@ function NavBar(props) {
             </Link>
             {role === 'user' && <NavbarUser />}
             {role === 'education' && <NavbarEducation />}
+            {role === 'admin' && <NavbarAdmin />}
           </div>
           <div className="d-flex align-items-center h100">
             {principal && <div className="wallet_id">{principal}</div>}
