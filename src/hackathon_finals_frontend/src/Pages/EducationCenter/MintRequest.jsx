@@ -15,7 +15,6 @@ function MintRequest() {
   }
 
   const mintNFT = async () => {
-    //
     // name,console.log('Minting')
     // console.log(process.env.IPFS_LINK)
     // const cid = await storeFiles([fileImg])
