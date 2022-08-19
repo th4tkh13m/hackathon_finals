@@ -61,10 +61,10 @@ function MintRequest() {
             request
           return (
             <li key={_id}>
-              <h3>Name: {name}</h3>
-              <h3>studentID: {studentID}</h3>
-              <h3>education: {education.name}</h3>
-              <h3>certificate: {certificate}</h3>
+              <h4>Name: {name}</h4>
+              <h4>studentID: {studentID}</h4>
+              <h4>education: {education.name}</h4>
+              <h4>certificate: {certificate}</h4>
               <img
                 src={`data:image/${image.contentType};base64,${Buffer.from(
                   image.data
@@ -73,6 +73,8 @@ function MintRequest() {
                 width="200"
                 height="300"
               />
+              <button>Mint NFT</button>
+              <button>Reject NFT</button>
             </li>
           )
         })}
