@@ -2,7 +2,6 @@ import { useEffect, useState, useContext } from 'react'
 import { useConnect } from '@connect2ic/react'
 import axios from 'axios'
 import { Context } from '../../hooks/index'
-import { storeFiles } from '../../Utils/web3Storage'
 import { PlusOutlined } from '@ant-design/icons'
 import { Form, Input, Button, Select } from 'antd'
 import { axios } from 'axios'
@@ -47,7 +46,6 @@ function UserKYC() {
   }
 
   const handleSubmit = async e => {
-    // e.preventDefault()
     console.log(user)
     const { certificate, name } = user
     if (!isConnected) {
@@ -72,41 +70,6 @@ function UserKYC() {
         console.log('error')
       }
     }
-    //
-    // name,console.log('Minting')
-    // console.log(process.env.IPFS_LINK)
-    // const cid = await storeFiles([fileImg])
-    // const fileNameImg = fileImg.name
-    // const fileName = new Date().getTime().toString()
-    // const nFile = new File(
-    //   [
-    //     JSON.stringify({
-    // certificate,
-    //       image: `https://${cid}.${process.env.IPFS_LINK}/${fileNameImg}`,
-    //     }),
-    //   ],
-    //   `${fileName}.json`,
-    //   { type: 'text/plain' }
-    // )
-    // const metadataCID = await storeFiles([nFile])
-    // Call backend to mint the token
-    // const tokenURI = `https://${metadataCID}.${process.env.IPFS_LINK}/${fileName}.json`
-    // console.log(tokenURI)
-    // const res = await superheroes.mint(Principal.fromText(principal), [
-    //   { tokenUri: `${IPFS_LINK}${metadataCID}/${values?.name}.json` },
-    // ]);
-    // const res = await axios.post(
-    //   'http://localhost:5000/api/v1/education-kyc',
-    //   formData
-    // )
-    // // Doing something to notification to user
-    // if (res.status === 201) {
-    //   console.log('success')
-    // } else {
-    //   console.log('error')
-    // }
-    // console.log('Minted')
-    // }
   }
 
   const getFile = e => {
