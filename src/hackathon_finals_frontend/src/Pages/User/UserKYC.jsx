@@ -33,49 +33,49 @@ function UserKYC() {
   }
 
   const handleSubmit = async e => {
-    console.log(e)
-    // const { certificate, name } = user
     // e.preventDefault()
-    // if (!isConnected) {
-    //   await connectWallet()
-    // } else {
-    //   console.log(1)
-    //   uploadImage(imgUri)
-    //
-    // name,console.log('Minting')
-    // console.log(process.env.IPFS_LINK)
-    // const cid = await storeFiles([fileImg])
-    // const fileNameImg = fileImg.name
-    // const fileName = new Date().getTime().toString()
-    // const nFile = new File(
-    //   [
-    //     JSON.stringify({
-    // certificate,
-    //       image: `https://${cid}.${process.env.IPFS_LINK}/${fileNameImg}`,
-    //     }),
-    //   ],
-    //   `${fileName}.json`,
-    //   { type: 'text/plain' }
-    // )
-    // const metadataCID = await storeFiles([nFile])
-    // Call backend to mint the token
-    // const tokenURI = `https://${metadataCID}.${process.env.IPFS_LINK}/${fileName}.json`
-    // console.log(tokenURI)
-    // const res = await superheroes.mint(Principal.fromText(principal), [
-    //   { tokenUri: `${IPFS_LINK}${metadataCID}/${values?.name}.json` },
-    // ]);
-    // const res = await axios.post(
-    //   'http://localhost:5000/api/v1/education-kyc',
-    //   formData
-    // )
-    // // Doing something to notification to user
-    // if (res.status === 201) {
-    //   console.log('success')
-    // } else {
-    //   console.log('error')
-    // }
-    // console.log('Minted')
-    // }
+    console.log(user)
+    const { certificate, name } = user
+    if (!isConnected) {
+      await connectWallet()
+    } else {
+      console.log(1)
+      uploadImage(imgUri)
+      //
+      // name,console.log('Minting')
+      // console.log(process.env.IPFS_LINK)
+      // const cid = await storeFiles([fileImg])
+      // const fileNameImg = fileImg.name
+      // const fileName = new Date().getTime().toString()
+      // const nFile = new File(
+      //   [
+      //     JSON.stringify({
+      // certificate,
+      //       image: `https://${cid}.${process.env.IPFS_LINK}/${fileNameImg}`,
+      //     }),
+      //   ],
+      //   `${fileName}.json`,
+      //   { type: 'text/plain' }
+      // )
+      // const metadataCID = await storeFiles([nFile])
+      // Call backend to mint the token
+      // const tokenURI = `https://${metadataCID}.${process.env.IPFS_LINK}/${fileName}.json`
+      // console.log(tokenURI)
+      // const res = await superheroes.mint(Principal.fromText(principal), [
+      //   { tokenUri: `${IPFS_LINK}${metadataCID}/${values?.name}.json` },
+      // ]);
+      // const res = await axios.post(
+      //   'http://localhost:5000/api/v1/education-kyc',
+      //   formData
+      // )
+      // // Doing something to notification to user
+      // if (res.status === 201) {
+      //   console.log('success')
+      // } else {
+      //   console.log('error')
+      // }
+      // console.log('Minted')
+    }
   }
 
   const getFile = e => {
@@ -98,14 +98,14 @@ function UserKYC() {
 
   const uploadImage = async base64EncodedImage => {
     try {
-      const res = await axios.post('http://localhost:5000/api/v1/request', {
-        data: base64EncodedImage,
+      const res = await axios.post('http://localhost:5000/api/v1/upload', {
+        data: 'vvd',
       })
-      // await fetch('/api/upload', {
-      //     method: 'POST',
-      //     body: JSON.stringify({ data: base64EncodedImage }),
-      //     headers: { 'Content-Type': 'application/json' },
-      // });
+      // const res = await fetch('http://localhost:5000/api/v1/upload', {
+      //   method: 'POST',
+      //   body: JSON.stringify({ data: base64EncodedImage }),
+      //   headers: { 'Content-Type': 'application/json' },
+      // })
       console.log(res)
     } catch (err) {
       console.error(err)
@@ -205,8 +205,8 @@ function UserKYC() {
               id="fileUpload"
               accept=".jpeg,.jpg,.png,.gif,image/*"
               onChange={e => getFile(e)}
-              required
-              style={{ display: 'none' }}
+              // required
+              // style={{ display: 'none' }}
             />
             <label
               htmlFor="fileUpload"
