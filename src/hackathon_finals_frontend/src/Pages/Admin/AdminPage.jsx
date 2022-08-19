@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import Moment from 'moment'
 
 function AdminPage() {
   const [requestKYC, setRequestKYC] = useState([])
@@ -25,7 +26,11 @@ function AdminPage() {
       <ul>
         <h1>Admin Page</h1>
         {requestKYC.map(education => {
-          const { address, image, legalRepresentative, name, _id } = education
+          const { address, image, legalRepresentative, name, _id, createdAt } =
+            education
+          const formatDate = Moment(new Date(createdAt)).format(
+            'DD-MM-YYYY HH:mm:ss'
+          )
           return (
             <li key={_id}>
               <h3>{name}</h3>
@@ -39,6 +44,7 @@ function AdminPage() {
               />
               <p>{address}</p>
               <p>{legalRepresentative}</p>
+              <p>{formatDate}</p>
               <button onClick={() => approveRequest(education)}>Approve</button>
               <button onClick={() => rejectRequest(education)}>Reject</button>
             </li>
