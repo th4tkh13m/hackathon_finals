@@ -15,7 +15,7 @@ const publicRoutes = [
     path: '/mint-request',
     component: MintRequest,
     role: 'education',
-    desc: 'List of requests',
+    desc: 'Requests',
   },
   {
     path: '/minted',
@@ -41,7 +41,7 @@ const publicRoutes = [
     path: '/requests',
     component: ListRequests,
     role: 'user',
-    desc: 'List of requests',
+    desc: 'Requests',
   },
   { path: '/my-nfts', component: MyNFT, role: 'user', desc: 'My nfts' },
   { path: '/all-nfts', component: AllNFTs, role: null, desc: 'All nfts' },

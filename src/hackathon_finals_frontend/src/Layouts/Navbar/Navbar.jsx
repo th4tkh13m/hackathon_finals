@@ -39,9 +39,9 @@ function NavBar(props) {
 
   return (
     role && (
-      <Nav className="navbar navbar-expand-lg bg-light">
+      <Nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <div className="d-flex">
+          <div className="d-flex gap-4">
             <Link className="navbar-brand" to="/">
               <img src={Logo} alt="Home" />
             </Link>
@@ -65,9 +65,11 @@ function NavBar(props) {
 export default withContext(NavBar)
 
 const Nav = styled.nav`
-  height: 60px;
-  border-bottom: 1px solid #ccc;
+  height: 76px;
+  padding: 2.5rem 20% 2.5rem 20%;
   position: sticky;
+  background: white;
+  box-shadow: rgba(2, 1, 1, 0.1) 0px 5px 20px -5px;
   top: 0px;
   z-index: 1;
   img {
@@ -76,9 +78,10 @@ const Nav = styled.nav`
   .connect-button {
     background-image: linear-gradient(45deg, #ff00aa, #3f35ff);
     color: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 0px;
-    padding: 5px 15px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-weight: 600;
   }
   .wallet_id {
     width: 100px;
@@ -90,6 +93,9 @@ const Nav = styled.nav`
     border-radius: 30px;
     padding: 0px 10px;
     margin-right: 15px;
+  }
+  .navbar-brand {
+    color: #3A2503;
   }
   .custom_dropdown {
     border: 0px;

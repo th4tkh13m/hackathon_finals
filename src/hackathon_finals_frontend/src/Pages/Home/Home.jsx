@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { final_be } from '../../../../declarations/final_be'
 import { Input, Tabs } from 'antd'
 import Item from './Item'
+import './Home.scss'
 const { Search } = Input
 const { TabPane } = Tabs
 

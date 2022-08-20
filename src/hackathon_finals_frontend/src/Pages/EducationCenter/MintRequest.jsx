@@ -4,6 +4,7 @@ import { EyeOutlined, DeleteOutlined } from '@ant-design/icons'
 import { Table, Button, Space } from 'antd'
 import axios from 'axios'
 import moment from 'moment'
+import './MintRequest.scss'
 
 // function MintRequest() {
 
