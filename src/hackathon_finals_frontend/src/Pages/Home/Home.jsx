@@ -26,7 +26,7 @@ function Home() {
       <h1> Home page</h1>
       <button onClick={() => navigate('/education-kyc')}>click</button>
       <Search
-        placeholder="input search text"
+        placeholder="Search certificate"
         allowClear
         enterButton="Search"
         size="large"
