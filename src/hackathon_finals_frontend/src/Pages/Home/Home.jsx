@@ -4,23 +4,14 @@ import { Input, Tabs } from 'antd'
 import Item from './Item'
 const { Search } = Input
 const { TabPane } = Tabs
-import { useNavigate } from 'react-router-dom'
 
 function Home() {
-  const navigate = useNavigate()
-
-  const hello = async () => {
-    const res = await final_be.hello()
-    console.log(res)
-  }
-
   const onSearch = () => {}
 
   const onChange = key => {
     console.log(key)
   }
 
-  hello()
   return (
     <div>
       <h1> Home page</h1>

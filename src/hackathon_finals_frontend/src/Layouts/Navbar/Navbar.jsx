@@ -13,20 +13,15 @@ import NavbarAdmin from './components/NavbarAdmin'
 function NavBar(props) {
   // console.log(props)
   const { role, logout, setRole } = props
-  const [pathRoles, setPathRoles] = useState([])
   const [Component, setComponent] = useState(null)
   const { principal, isConnected, disconnect } = useConnect()
 
   useEffect(() => {
-    // let role = checkRole(principal)
-    // setRole(role)
-    // const filterPath = publicRoutes.filter(route => route.role === role)
-    // setPathRoles(filterPath)
-  }, [])
+    console.log('role navbar: ' + role)
+  }, [role])
 
   const onConnectWallet = async () => {
     try {
-      console.log(principal)
       console.log('Connected to Plug')
     } catch (e) {
       console.log(e)
