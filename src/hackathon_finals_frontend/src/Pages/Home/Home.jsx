@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { final_be } from '../../../../declarations/final_be'
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
+  const navigate = useNavigate()
+
   const [size, setSize] = useState('large')
 
   const hello = async () => {
@@ -13,6 +16,7 @@ function Home() {
   return (
     <div>
       <h1> Home page</h1>
+      <button onClick={() => navigate('/education-kyc')}>click</button>
     </div>
   )
 }
