@@ -21,8 +21,10 @@ function UserKYC() {
   }, [])
 
   const getEducations = async () => {
-    const res = await axios.get('http://localhost:5000/api/v1/education')
-    setEducationList(res.data.educations)
+    const res = await axios.get(
+      'http://localhost:5000/api/v1/education?isKYCVerified=false'
+    )
+    setEducationList(res.data.education)
   }
 
   const connectWallet = async () => {
@@ -46,7 +48,6 @@ function UserKYC() {
   }
 
   const handleSubmit = async e => {
-    console.log(user)
     const { certificate, name } = user
     if (!isConnected) {
       await connectWallet()
